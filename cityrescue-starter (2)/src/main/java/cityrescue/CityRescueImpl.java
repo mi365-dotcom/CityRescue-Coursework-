@@ -475,7 +475,7 @@ public class CityRescueImpl implements CityRescue {
                 " STATION=" + unit.ogStationID;
         }
         // throw new UnsupportedOperationException("Not implemented yet");
-    }
+    
 
     @Override
     public int reportIncident(IncidentType type, int severity, int x, int y) throws InvalidSeverityException, InvalidLocationException {
