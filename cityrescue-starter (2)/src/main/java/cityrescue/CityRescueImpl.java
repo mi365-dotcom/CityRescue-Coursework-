@@ -45,7 +45,18 @@ public class CityRescueImpl implements CityRescue {
         // making obstacle grid all false where
         // FALSE REPRESENTS AN EMPTY SPACE IN THE GRID
         obstacles = new boolean[width][height];
+
+        // Resets all the states
+        stationCount = 0;
+        unitCount = 0;
+        stations = new Station[100];
+        units = new Unit[MAX_UNITS];
+        
+        // Resets static ID generators
+        Station.nextStationID = 1;
+        Unit.nextUnitID = 1;
     }
+    
 
     @Override
     public int[] getGridSize() {
@@ -349,9 +360,8 @@ public class CityRescueImpl implements CityRescue {
         Unit unit = null;
 
         // We find the unit in the units array
-        for(int i = 0; i < stationCount; i++) {
+        for(int i = 0; i < unitCount; i++) {
             if(units[i].id == unitId){
-                index = i;
                 // Assigns the unit here.
                 unit = units[i];
                 break;
